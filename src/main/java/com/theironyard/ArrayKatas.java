@@ -1,5 +1,11 @@
 package com.theironyard;
 
+import sun.nio.cs.ext.MacCentralEurope;
+
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Random;
+
 /**
  * This is another kata exercise. Follow the instructions below and implement
  * the methods as described.
@@ -18,6 +24,10 @@ public class ArrayKatas {
      * @return an array of five random ints
      */
     // todo: create fiveRandomInts() static method
+    public static int[] fiveRandomInts(){
+        Random random = new Random();
+        return new int[]{random.nextInt(),random.nextInt(),random.nextInt(),random.nextInt(),random.nextInt()};
+    }
 
     /**
      * Create a static method named threeArbitraryDates() that returns an array
@@ -27,6 +37,13 @@ public class ArrayKatas {
      * @return an array of three LocalDate objects
      */
     // todo: create threeArbitraryDates() method
+    public static LocalDate[] threeArbitraryDates(){
+        LocalDate[] localDate = new LocalDate[3];
+        localDate[0] = LocalDate.now();
+        localDate[1] = LocalDate.of(1990,01,01);
+        localDate[2] = LocalDate.of(2111,12,31);
+        return localDate;
+    }
 
     /**
      * Create a static method named nullsToArbitraryStrings() that accepts an
@@ -51,6 +68,25 @@ public class ArrayKatas {
      * @return an array of five string where null values have been replaced with arbitrary strings
      */
     // todo: create nullsToArbitraryStrings() method
+    public static String[] nullsToArbitraryStrings(String[] source){
+        Random random = new Random();
+        if (source[0] == null){
+            source[0] = "Tomato";
+        }
+        if (source[1] == null){
+            source[1] = "Potato";
+        }
+        if (source[2] == null){
+            source[2] = "Motato";
+        }
+        if (source[3] == null){
+            source[3] = "Topato";
+        }
+        if (source[4] == null){
+            source[4] = "otamoT";
+        };
+        return source;
+    }
 
     /**
      * Create a static method named arrayIndexes() that accepts a single integer
@@ -64,5 +100,12 @@ public class ArrayKatas {
      * @return An array of ints, starting at 0 and continuing to n-1
      */
     // todo: create arrayIndexes() method
+    public static int[] arrayIndexes(int n){
+        int[] answer = new int[n];
+        for (int x = 0; x <= n - 1; x = x + 1){
+            answer[x] = x;
+        }
+        return answer;
+    }
 
 }
